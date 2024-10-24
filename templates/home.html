@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <header>
+        <nav>
+            <ul>
+                <img src="{{ url_for('static', filename='css/image/logo.png') }}" alt="no image " width="100px" height="80px">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="{{ url_for('cart') }}">Cart</a></li>
+                <li><a href="{{ url_for('login') }}">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="products">
+        <h2>Our Products</h2>
+        
+        <div class="product-list">
+            <div class="product">
+                <img src="{{ url_for('static', filename='css/image/product1.jpg') }}" alt="Product 1">
+                <h3><small>Groceries</small> <br> <h4>Assorted Coffee</h4></h3>
+                <p>$35.00</p>
+                <form action="{{ url_for('add_to_cart') }}" method="POST">
+                    <input type="hidden" name="product_name" value="Assorted Coffee">
+                    <input type="hidden" name="product_price" value="35.00">
+                    <button type="submit">Add to Cart</button>
+                </form>
+            </div>
+
+            <div class="product">
+                <img src="{{ url_for('static', filename='css/image/product2.jpg') }}" alt="Product 2">
+                <h3><small>Groceries</small> <br><h4>Hand Sanitizer</h4></h3>
+                <p>$15.00</p>
+                <form action="{{ url_for('add_to_cart') }}" method="POST">
+                    <input type="hidden" name="product_name" value="Hand Sanitizer">
+                    <input type="hidden" name="product_price" value="15.00">
+                    <button type="submit">Add to Cart</button>
+                </form>
+            </div>
+
+            <div class="product">
+                <img src="{{ url_for('static', filename='css/image/product3.jpg') }}" alt="Product 3">
+                <h3><small>Juice</small><br> <h4>Fresh Orange Juice</h4></h3>
+                <p>$20.00</p>
+                <form action="{{ url_for('add_to_cart') }}" method="POST">
+                    <input type="hidden" name="product_name" value="Fresh Orange Juice">
+                    <input type="hidden" name="product_price" value="20.00">
+                    <button type="submit">Add to Cart</button>
+                </form>
+            </div>
+
+            <div class="product">
+                <img src="{{ url_for('static', filename='css/image/product4.jpg') }}" alt="Product 4">
+                <h3><small>Groceries</small><br><h4>Handpicked Red Chillies</h4></h3>
+                <p>$19.00</p>
+                <form action="{{ url_for('add_to_cart') }}" method="POST">
+                    <input type="hidden" name="product_name" value="Handpicked Red Chillies">
+                    <input type="hidden" name="product_price" value="19.00">
+                    <button type="submit">Add to Cart</button>
+                </form>
+            </div>
+
+            <div class="product">
+                <img src="{{ url_for('static', filename='css/image/product5.jpg') }}" alt="Product 5">
+                <h3><small>Groceries</small><br> <h4>Natural Extracted Oil</h4></h3>
+                <p>$25.00</p>
+                <form action="{{ url_for('add_to_cart') }}" method="POST">
+                    <input type="hidden" name="product_name" value="Natural Extracted Edible Oil">
+                    <input type="hidden" name="product_price" value="25.00">
+                    <button type="submit">Add to Cart</button>
+                </form>
+            </div>
+
+            <div class="product">
+                <img src="{{ url_for('static', filename='css/image/product6.jpg') }}" alt="Product 6">
+                <h3><small>Groceries</small><br> <h4>Organic Honey</h4></h3>
+                <p>$34.00</p>
+                <form action="{{ url_for('add_to_cart') }}" method="POST">
+                    <input type="hidden" name="product_name" value="Fresh Organic Honey">
+                    <input type="hidden" name="product_price" value="34.00">
+                    <button type="submit">Add to Cart</button>
+                </form>
+            </div>
+        </div>
+    </section>
+{% endblock %}

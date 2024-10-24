@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="container" style="background-image: url('/static/css/image/BG.png'); background-size: cover; background-position: center; height: 100vh;">
+    <div class="row justify-content-center align-items-center h-100">
+        <div class="col-md-6 col-lg-4" style="background-color: rgba(230, 222, 222, 0.9); border-radius: 8px;">
+            <h2 class="text-center">Sign Up</h2>
+            <hr>
+            <form action="#" method="post">
+                {{ form.hidden_tag() }}
+                
+                <div class="mb-3">
+                    {{ form.username.label(class_="form-label") }}
+                    {{ form.username(class_="form-control", size=20) }}
+                </div>
+                
+                <div class="mb-3">
+                    {{ form.password.label(class_="form-label") }}
+                    {{ form.password(class_="form-control", size=20) }}
+                </div>
+                
+                <div class="d-grid">
+                    {{ form.submit(class_="btn btn-primary btn-block") }}
+                </div>
+            </form>
+            <p class="text-center mt-3">Already have an account? 
+                <a href="{{ url_for('login') }}">Login here</a>.
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}

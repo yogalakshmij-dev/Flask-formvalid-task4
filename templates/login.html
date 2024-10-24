@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container" >
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-4 p-4" style="background-color: rgba(223, 218, 218, 0.9); border-radius: 8px;">
+            <h2 class="text-center">Login</h2>
+            <hr>
+            <form method="post">
+
+                {{ form.hidden_tag() }}
+
+                <div class="mb-3">
+                    {{ form.username.label(class_="form-label") }}
+                    {{ form.username(class_="form-control", size=20) }}
+                </div>
+                
+                <div class="mb-3">
+                    {{ form.password.label(class_="form-label") }}
+                    {{ form.password(class_="form-control", size=20) }}
+                </div>
+
+                <div class="d-grid">
+                    {{ form.submit(class_="btn btn-primary btn-block") }}
+                </div>
+
+            </form>
+            <p class="text-center mt-3">Don't have an account? 
+              <a href="{{ url_for('signup') }}">Signup here</a>
+          </p>
+        </div>
+    </div>
+</div>
+{% endblock %}
